@@ -67,7 +67,7 @@ RelayBandwidthRate $2
 RelayBandwidthBurst $3
 AccountingMax $new_max_value $max_unit
 ContactInfo $5 $6
-DirPort 80
+DirPort 8080
 DirPortFrontPage /var/www/html/index.html
 
 # Reject server's own IP
