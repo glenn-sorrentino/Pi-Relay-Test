@@ -153,6 +153,7 @@ sudo chown debian-tor:debian-tor /var/log/tor
 sudo chmod 700 /var/log/tor
 sudo chown -R debian-tor:debian-tor /var/lib/tor
 sudo chmod 700 /var/lib/tor
+sudo chown debian-tor:debian-tor /var/www/html/index.html
 sudo systemctl restart tor
 
 setup_tor_relay
