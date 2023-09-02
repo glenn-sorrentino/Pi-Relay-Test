@@ -9,7 +9,7 @@ cat << "EOF"
  /                         /  
 '                         '   
 
-The easiest way to turn your Raspberry Pi into a Tor middle relay.
+The easiest way to turn your Raspberry Pi into a Tor relay.
 
 A free tool by Science & Design - https://scidsg.org
 EOF
