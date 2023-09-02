@@ -16,10 +16,8 @@ EOF
 sleep 3
 
 # Install whiptail if not present
-if ! command -v whiptail &> /dev/null; then
-    sudo apt update && sudo apt -y dist-upgrade
-    sudo apt install -y whiptail git
-fi
+sudo apt update && sudo apt -y dist-upgrade
+sudo apt install -y whiptail git
 
 git clone https://github.com/glenn-sorrentino/Pi-Relay-Test.git
 cd Pi-Relay-Test/
