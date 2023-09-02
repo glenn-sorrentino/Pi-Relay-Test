@@ -22,6 +22,7 @@ sudo apt install -y whiptail git
 git clone https://github.com/glenn-sorrentino/Pi-Relay-Test.git
 sleep 10
 cd Pi-Relay-Test/
+sleep 3
 
 OPTION=$(whiptail --title "Tor Relay Configurator" --menu "Choose your relay type" 15 60 4 \
 "1" "Exit relay" \
