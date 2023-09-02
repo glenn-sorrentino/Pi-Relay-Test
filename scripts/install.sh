@@ -20,7 +20,7 @@ sudo apt update && sudo apt -y dist-upgrade
 sudo apt install -y whiptail git
 
 git clone https://github.com/glenn-sorrentino/Pi-Relay-Test.git
-sleep 3
+sleep 10
 cd Pi-Relay-Test/
 
 OPTION=$(whiptail --title "Tor Relay Configurator" --menu "Choose your relay type" 15 60 4 \
