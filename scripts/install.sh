@@ -20,7 +20,7 @@ sudo apt update && sudo apt -y dist-upgrade
 sudo apt install -y whiptail git
 
 git clone https://github.com/glenn-sorrentino/Pi-Relay-Test.git
-sleep 10
+sleep 6
 cd ~/Pi-Relay-Test/scripts/
 sleep 3
 

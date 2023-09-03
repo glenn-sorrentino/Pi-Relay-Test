@@ -46,7 +46,7 @@ EOL
 
 SERVER_IP=$(curl -s ifconfig.me)
 current_dir=$(pwd)
-wget https://raw.githubusercontent.com/scidsg/tor-exit-notice/main/index.html -O /var/www/html/index.html
+mv ~/Pi-Relay-Test/templates/exit-notice.html /var/www/html/index.html
 
 # Function to configure Tor as a middle relay
 configure_tor() {
