@@ -12,7 +12,7 @@ Pi Relay is a free and open-source tool that transforms a Raspberry Pi into a re
 curl -sSL https://raw.githubusercontent.com/scidsg/pi-relay/main/scripts/pro/install.sh | bash
 ```
 
-### Install an e-Paper Display:
+### Use an e-Paper Display:
 
 ```
 curl -sSL https://raw.githubusercontent.com/scidsg/pi-relay/main/scripts/waveshare-2_13in-eink-display.sh | bash
