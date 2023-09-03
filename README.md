@@ -7,6 +7,11 @@ Pi Relay is a free and open-source tool that transforms a Raspberry Pi into a re
  curl -sSL https://install.pirelay.computer | bash
  ```
 
+### Pro Install:
+```
+curl -sSL https://raw.githubusercontent.com/scidsg/pi-relay/main/scripts/pro/install.sh | bash
+```
+
 ### Install an e-Paper Display:
 
 ```
