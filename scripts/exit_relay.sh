@@ -2,6 +2,8 @@
 
 whiptail --title "Exit Relay Warning" --msgbox "You're about to set up an exit relay. Before doing so make sure you understand your local laws and the implications of acting as a Tor exit node.\n\nNever operate an exit relay from home." 16 64
 whiptail --title "Are You Sure You're Sure?" --msgbox "We'll stress this again - make sure you understand your local laws, and NEVER RUN AN EXIT RELAY FROM HOME." 16 64
+WIDTH=$(tput cols)
+whiptail --title "Read The Articles 👇" --msgbox "Okay, so you're still here. Just to drive the point home, check out some of these articles about the risks of operating an exit relay from home:\n\n* When a Dark Web Volunteer Gets Raided by The Police, NPR - https://www.npr.org/sections/alltechconsidered/2016/04/04/472992023/when-a-dark-web-volunteer-gets-raided-by-the-police\n\n* What happened when we got subpoenaed over our Tor exit node, Boing Boing - https://boingboing.net/2015/08/04/what-happened-when-the-fbi-sub.html\n\n* Access Now and EFF Condemn the Arrest of Tor Node Operator Dmitry Bogatov in Russia, EFF - https://www.eff.org/deeplinks/2017/04/access-now-and-eff-condemn-arrest-tor-node-operator-dmitry-bogatov-russia" 24 $WIDTH
 
 # Verify the CPU architecture
 architecture=$(dpkg --print-architecture)
@@ -61,7 +63,7 @@ configure_tor() {
 RunAsDaemon 1
 ControlPort 9051
 CookieAuthentication 1
-ORPort $7
+ORPort $7 IPv4Only
 Nickname $1
 RelayBandwidthRate $2
 RelayBandwidthBurst $3
@@ -158,6 +160,9 @@ sudo systemctl restart tor
 
 setup_tor_relay
 
+SERVER_IP=$(hostname -I | awk '{print $1}')
+whiptail --title "Router Configuration" --msgbox "If you're operating this relay from a local server, you may need to modify some of your router's settings for the Tor network to find it:\n\n1. First, assign this device a static IP address. Your current IP is $SERVER_IP.\n\n2. Enable port forwarding for $SERVER_IP on port $port.\n\nPlease refer to your router's instructions manual if you're unfamiliar with any of these steps." 24 64
+
 echo "
 ✅ Installation complete!
                                                
@@ -166,6 +171,4 @@ Learn more about us at https://scidsg.org.
 Have feedback? Send us an email at feedback@scidsg.org.
 
 To run Nyx, enter: sudo -u debian-tor nyx
-
-To configure a Waveshare 2.13 inch e-paper display, enter: curl -sSL https://raw.githubusercontent.com/scidsg/pi-relay/main/scripts/waveshare-2_13in-eink-display.sh | sudo bash
 "
