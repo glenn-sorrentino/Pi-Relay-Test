@@ -28,8 +28,8 @@ fi
 
 sleep 6
 
-if [ -d ~/Pi-Relay-Test/scripts/ ]; then
-    cd ~/Pi-Relay-Test/scripts/
+if [ -d ~/Pi-Relay-Test/scripts/pro/ ]; then
+    cd ~/Pi-Relay-Test/scripts/pro/
 else
     echo "Directory not found. Exiting."
     exit 1
