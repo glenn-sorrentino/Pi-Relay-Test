@@ -18,7 +18,7 @@ sleep 3
 
 # Install whiptail if not present
 sudo apt update && sudo apt -y dist-upgrade && sudo apt -y autoremove
-sudo apt install -y whiptail git
+sudo apt install -y whiptail git wget curl gpg
 
 git clone https://github.com/glenn-sorrentino/Pi-Relay-Test.git
 if [ $? -ne 0 ]; then
