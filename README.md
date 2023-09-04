@@ -7,12 +7,7 @@ Pi Relay is a free and open-source tool that transforms a Raspberry Pi into a re
  curl -sSL https://install.pirelay.computer | bash
  ```
 
-### Pro Install:
-```
-curl -sSL https://raw.githubusercontent.com/scidsg/pi-relay/main/scripts/pro/install.sh | bash
-```
-
-### Use an e-Paper Display:
+### Install an e-Paper Display:
 
 ```
 curl -sSL https://raw.githubusercontent.com/scidsg/pi-relay/main/scripts/waveshare-2_13in-eink-display.sh | bash
@@ -22,9 +17,22 @@ curl -sSL https://raw.githubusercontent.com/scidsg/pi-relay/main/scripts/wavesha
 
 ### Raspberry Pi
 - **Hardware:** [Raspberry Pi 4](https://www.amazon.com/Raspberry-Model-2019-Quad-Bluetooth/dp/B07TC2BK1X/?&_encoding=UTF8&tag=scidsg-20&linkCode=ur2&linkId=ee402e41cd98b8767ed54b1531ed1666&camp=1789&creative=9325)/[3B+](https://www.amazon.com/ELEMENT-Element14-Raspberry-Pi-Motherboard/dp/B07P4LSDYV/?&_encoding=UTF8&tag=scidsg-20&linkCode=ur2&linkId=d76c1db453c42244fe465c9c56601303&camp=1789&creative=9325)
+- **Memory:**
+   - Non-exit relay @ <5 MB/s: >= 512 MB RAM (Default settings)
+   - Non-exit relay @ >5 MB/s: >=1 GB RAM
+   - Exit relay: 1.5 GB RAM/instance
+- **Default Settings:**
+   - Relay Type: Middle
+   - Monthly data: 1.5 TB
+   - Bandwidth rate: 2 MB/s
+   - Bandwidth burst: 4 MB/s
+   - ORPort: 443
+- **Storage:** >=8 GB
 - **OS:** Raspberry Pi OS (64-bit)
 - **Display** (optional): [Waveshare 2.13" e-Paper display](https://www.amazon.com/gp/product/B07Z1WYRQH/?&_encoding=UTF8&tag=scidsg-20&linkCode=ur2&linkId=edc2337499023ba20f7ac43e49dd041d&camp=1789&creative=9325)
 - (👆 Affiliate links)
+
+Learn more: https://community.torproject.org/relay/relays-requirements/
   
  ![cover](https://github.com/scidsg/pi-relay/assets/28545431/0c16b5a6-f2ca-482a-b728-759c0df2e233)
 
