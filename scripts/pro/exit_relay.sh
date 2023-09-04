@@ -49,7 +49,7 @@ APT::Periodic::Unattended-Upgrade "1";
 APT::Periodic::Verbose "1";
 EOL
 
-SERVER_IP=$(curl -s ifconfig.me)
+SERVER_IP=$(hostname -I | awk '{print $1}')
 current_dir=$(pwd)
 cp ~/Pi-Relay-Test/templates/exit-notice.html /var/www/html/index.html
 
@@ -163,7 +163,6 @@ sudo systemctl restart tor
 
 setup_tor_relay
 
-SERVER_IP=$(hostname -I | awk '{print $1}')
 whiptail --title "Router Configuration" --msgbox "If you're operating this relay from a local server, you may need to modify some of your router's settings for the Tor network to find it:\n\n1. First, assign this device a static IP address. Your current IP is $SERVER_IP.\n\n2. Enable port forwarding for $SERVER_IP on port $port.\n\nPlease refer to your router's instructions manual if you're unfamiliar with any of these steps." 24 64
 
 echo "
