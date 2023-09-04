@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Learn more about relay requirements:
+# https://community.torproject.org/relay/relays-requirements/
+
 # Verify the CPU architecture
 architecture=$(dpkg --print-architecture)
 echo "CPU architecture is $architecture"
@@ -96,10 +99,10 @@ collect_info() {
         fi
     done
 
-    bandwidth=$(whiptail --inputbox "Enter your desired bandwidth per second" 8 78 "1 MB" --title "Bandwidth Rate" 3>&1 1>&2 2>&3)
-    burst=$(whiptail --inputbox "Enter your burst rate per second" 8 78 "2 MB" --title "Bandwidth Burst" 3>&1 1>&2 2>&3)
-    max=$(whiptail --inputbox "Set your maximum bandwidth each month" 8 78 "1.5 TB" --title "Accounting Max" 3>&1 1>&2 2>&3)
-    contactname=$(whiptail --inputbox "Please enter your name" 8 78 "Random Person" --title "Contact Name" 3>&1 1>&2 2>&3)        
+    bandwidth=$(whiptail --inputbox "Enter your desired bandwidth per second. It's recommended to share at least 2 MB/s." 8 78 "2 MB" --title "Bandwidth Rate" 3>&1 1>&2 2>&3)
+    burst=$(whiptail --inputbox "Enter your burst rate per second." 8 78 "4 MB" --title "Bandwidth Burst" 3>&1 1>&2 2>&3)
+    max=$(whiptail --inputbox "How much data would you like to share every month? It's required to share at least 200 GB." 8 78 "1.5 TB" --title "Accounting Max" 3>&1 1>&2 2>&3)
+    contactname=$(whiptail --inputbox "Please enter your name." 8 78 "Random Person" --title "Contact Name" 3>&1 1>&2 2>&3)        
     email=$(whiptail --inputbox "Please enter your contact email. Use the provided format to help avoid spam." 8 78 "<nobody AT example dot com>" --title "Contact Email" 3>&1 1>&2 2>&3)        
     port=$(whiptail --inputbox "Which port do you want to use?" 8 78 "443" --title "Relay Port" 3>&1 1>&2 2>&3)
 }

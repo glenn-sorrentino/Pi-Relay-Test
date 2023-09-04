@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Learn more about relay requirements:
+# https://community.torproject.org/relay/relays-requirements/
+
 whiptail --title "Exit Relay Warning" --msgbox "You're about to set up an exit relay. Before doing so make sure you understand your local laws and the implications of acting as a Tor exit node.\n\nNever operate an exit relay from home." 16 64
 whiptail --title "Are You Sure You're Sure?" --msgbox "We'll stress this again - make sure you understand your local laws, and NEVER RUN AN EXIT RELAY FROM HOME." 16 64
 WIDTH=$(tput cols)
@@ -136,9 +139,9 @@ collect_info() {
         fi
     done
 
-    bandwidth=$(whiptail --inputbox "Enter your desired bandwidth per second" 8 78 "1 MB" --title "Bandwidth Rate" 3>&1 1>&2 2>&3)
-    burst=$(whiptail --inputbox "Enter your burst rate per second" 8 78 "2 MB" --title "Bandwidth Burst" 3>&1 1>&2 2>&3)
-    max=$(whiptail --inputbox "Set your maximum bandwidth each month" 8 78 "1.5 TB" --title "Accounting Max" 3>&1 1>&2 2>&3)
+    bandwidth=$(whiptail --inputbox "Enter your desired bandwidth per second. Fast relays are >=12.5 MB/s." 8 78 "12.5 MB" --title "Bandwidth Rate" 3>&1 1>&2 2>&3)
+    burst=$(whiptail --inputbox "Enter your burst rate per second" 8 78 "25 MB" --title "Bandwidth Burst" 3>&1 1>&2 2>&3)
+    max=$(whiptail --inputbox "How much data would you like to share every month? It's required to share at least 200 GB." 8 78 "1.5 TB" --title "Accounting Max" 3>&1 1>&2 2>&3)
     contactname=$(whiptail --inputbox "Please enter your name" 8 78 "Random Person" --title "Contact Name" 3>&1 1>&2 2>&3)        
     email=$(whiptail --inputbox "Please enter your contact email. Use the provided format to help avoid spam." 8 78 "<nobody AT example dot com>" --title "Contact Email" 3>&1 1>&2 2>&3)        
     port=$(whiptail --inputbox "Which port do you want to use?" 8 78 "443" --title "Relay Port" 3>&1 1>&2 2>&3)
