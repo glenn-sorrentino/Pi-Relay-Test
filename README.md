@@ -33,8 +33,8 @@ curl -sSL https://raw.githubusercontent.com/scidsg/pi-relay/main/scripts/wavesha
 - (👆 Affiliate links)
 
 Learn more: https://community.torproject.org/relay/relays-requirements/
-  
- ![cover](https://github.com/scidsg/pi-relay/assets/28545431/0c16b5a6-f2ca-482a-b728-759c0df2e233)
+
+![cover](https://github.com/glenn-sorrentino/Pi-Relay-Test/assets/28545431/18176343-abd3-4fe3-8067-b881b8f0362e)
 
 ## Why Pi Relay?
 
