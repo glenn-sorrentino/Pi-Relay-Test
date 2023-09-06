@@ -66,7 +66,7 @@ configure_tor() {
 RunAsDaemon 1
 ControlPort 9051
 CookieAuthentication 1
-ORPort $7 IPv4Only
+ORPort $7
 Nickname $1
 RelayBandwidthRate $2
 RelayBandwidthBurst $3
