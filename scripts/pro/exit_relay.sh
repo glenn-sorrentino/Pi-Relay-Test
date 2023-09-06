@@ -146,7 +146,7 @@ collect_info() {
     port=$(whiptail --inputbox "Which port do you want to use?" 8 78 "443" --title "Relay Port" 3>&1 1>&2 2>&3)
 }
 
-# New function to generate the index.html with the collected email
+# Function to generate the index.html
 generate_index() {
     cat > /var/www/html/index.html << EOL
 <!doctype html>
